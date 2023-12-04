@@ -1,26 +1,26 @@
 package day2
 
-data class Round(
-    val red: Int,
-    val blue: Int,
-    val green: Int
-) {
-
-    fun addRed(value: Int) = copy(red = red + value)
-
-    fun addBlue(value: Int) = copy(blue = blue + value)
-
-    fun addGreen(value: Int) = copy(green = green + value)
-}
-
-data class Game(
-    val id: Int,
-    val rounds: List<Round>
-)
-
-typealias RawRound = List<Pair<Int, String>>
+private typealias RawRound = List<Pair<Int, String>>
 
 object Day2 {
+
+    data class Round(
+        val red: Int,
+        val blue: Int,
+        val green: Int
+    ) {
+
+        fun addRed(value: Int) = copy(red = red + value)
+
+        fun addBlue(value: Int) = copy(blue = blue + value)
+
+        fun addGreen(value: Int) = copy(green = green + value)
+    }
+
+    data class Game(
+        val id: Int,
+        val rounds: List<Round>
+    )
 
     fun List<String>.convertToGames(): List<Game> = mapIndexed { index, rawData ->
         val rounds = rawData.substring(rawData.indexOf(":") + 1).split(";")

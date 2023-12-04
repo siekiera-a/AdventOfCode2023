@@ -1,5 +1,6 @@
 package day2
 
+import day2.Day2.Game
 import day2.Day2.convertToGames
 import utils.readNotEmptyLines
 
